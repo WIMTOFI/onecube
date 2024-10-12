@@ -1,0 +1,120 @@
+.container {
+  
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 0.8fr 1.3fr 0.9fr; 
+    grid-template-rows: 1fr 1fr 1fr 0.6fr 1fr 1fr 1.4fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". Header01 ."
+      ". Image01 ."
+      ". Image01 ."
+      ". Btn ."
+      ". Image02 ."
+      ". Image02 ."
+      ". . ."; 
+  }
+  .Header01 { grid-area: Header01; 
+   #t1{
+      position: absolute;
+      top: 6%;
+      left: 700px;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: calc(0.0rem + min(60px, 15vw));
+      font-weight: 900;
+      letter-spacing: -.175ch;
+      line-height: 0.9;
+      color: rgb(255, 89, 0);
+      -webkit-text-stroke: 5px rgb(96, 34, 0);
+      text-shadow: 8px 8px rgba(0, 0, 0, 0.2);
+      
+      > span:first-of-type {
+        font-size: .75em;
+      }
+    }
+  
+  }
+  .Image01 { grid-area: Image01; 
+    background-position-x: 50%;  
+  #imageYellow{ 
+    position: absolute;
+    left: 50%;
+ 
+              } 
+  }
+  .Image02 { grid-area: Image02; }
+
+  .Btn { grid-area: Btn;
+    /*position: absolute;
+    top:10;*/
+    left: 40%;
+    .btn:link,
+    .btn:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all .2s;
+        position: absolute;
+    }
+    
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-white {
+        background-color: #dfc3fa;
+        color: #777;
+    }
+    
+    .btn::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    
+    .btn-white::after {
+        background-color: #fff;
+    }
+    
+    .btn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+    
+    .btn-animated {
+        animation: moveInBottom 5s ease-out;
+        animation-fill-mode: backwards;
+    }
+    
+    @keyframes moveInBottom {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+  
+  }
